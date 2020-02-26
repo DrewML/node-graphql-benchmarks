@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+rm -f scenarios/*/results.csv
+rm -rf scenarios/*/html-report
+rm -f scenarios/*/jmeter.log
+
+for dir in scenarios/*
+do
+    echo Running $dir benchmark
+    node $dir &
+    jmeter -n -t graphql-test-plan.jmx -l $dir/results.csv -j $dir/jmeter.log -e -o $dir/html-report
+    kill $!
+    echo Finished $dir benchmark
+done

@@ -1,0 +1,5 @@
+jmeter.log
+npm-debug.log
+node_modules
+scenarios/*/results.csv
+scenarios/*/html-report
