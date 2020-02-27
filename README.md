@@ -59,21 +59,22 @@ After running, see `html-report/index.html` within each subdirectory in `scenari
 
 The baseline measurements are meant to give a rough idea of what our node.js-based servers are capable of _without_ GraphQL. These demo apps accept a `POST` at `/graphql`, but just have a hard-coded return payload. No parsing, no validation, no query execution.
 
-| Libraries                            | Peak Transactions | Average Response Time | Max Response Time | Notes                                                                                             |
-| ------------------------------------ | ----------------- | --------------------- | ----------------- | ------------------------------------------------------------------------------------------------- |
-| Express (no GraphQL)                 | 11,157/s          | 10.57ms               | 72ms              |                                                                                                   |
-| Fastify (no GraphQL)                 | 13,837.83/s       | 8.50ms                | 76ms              |                                                                                                   |
+| Libraries            | Peak Transactions | Average Response Time | Max Response Time | Notes |
+| -------------------- | ----------------- | --------------------- | ----------------- | ----- |
+| Express (no GraphQL) | 11,157/s          | 10.57ms               | 72ms              |       |
+| Fastify (no GraphQL) | 13,837.83/s       | 8.50ms                | 76ms              |       |
 
 ### Results
 
-| Libraries                            | Peak Transactions | Average Response Time | Max Response Time | Notes                                                                                             |
-| ------------------------------------ | ----------------- | --------------------- | ----------------- | ------------------------------------------------------------------------------------------------- |
-| apollo-server                        | 4315.97/s         | 27.88ms               | 180ms             |                                                                                                   |
-| apollo-server + graphql-jit          | 4618/s            | 25.83ms               | 239ms             |                                                                                                   |
-| express-graphql                      | 81/s              | 1059.14ms             | 7357ms            | Lots of JMeter thread crashes, consistently. Suspect too much buffering. Never exceeded 130 users |
-| fastify + apollo-server-fastify      | 5619/s            | 21.66ms               | 140ms             |                                                                                                   |
-| fastify + fastify-gql (jit enabled)  | 13,411/s          | 8.69ms                | 109ms             |                                                                                                   |
-| fastify + fastify-gql (jit disabled) | 10,461/s          | 11.15ms               | 84ms              |                                                                                                   |
+| Libraries                             | Peak Transactions | Average Response Time | Max Response Time | Notes                                                                                             |
+| ------------------------------------- | ----------------- | --------------------- | ----------------- | ------------------------------------------------------------------------------------------------- |
+| apollo-server                         | 4315.97/s         | 27.88ms               | 180ms             |                                                                                                   |
+| apollo-server + graphql-jit           | 4618/s            | 25.83ms               | 239ms             |                                                                                                   |
+| express-graphql                       | 81/s              | 1059.14ms             | 7357ms            | Lots of JMeter thread crashes, consistently. Suspect too much buffering. Never exceeded 130 users |
+| fastify + apollo-server-fastify       | 5619/s            | 21.66ms               | 140ms             |                                                                                                   |
+| fastify + apollo-server-fastify + jit | 6271/s            | 19.33ms               | 139ms             |                                                                                                   |
+| fastify + fastify-gql (jit enabled)   | 13,411/s          | 8.69ms                | 109ms             |                                                                                                   |
+| fastify + fastify-gql (jit disabled)  | 10,461/s          | 11.15ms               | 84ms              |                                                                                                   |
 
 ## Thoughts
 
