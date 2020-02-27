@@ -16,6 +16,8 @@
     "fastify": "^2.12.0",
     "fastify-gql": "^3.0.6",
     "graphql": "^14.6.0",
-    "graphql-tools": "^4.0.7"
+    "graphql-jit": "^0.4.2",
+    "graphql-tools": "^4.0.7",
+    "tiny-lru": "^7.0.2"
   }
 }

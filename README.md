@@ -56,15 +56,15 @@ After running, see `html-report/index.html` within each subdirectory in `scenari
 | Libraries                       | Peak Transactions | Average Response Time | Max Response Time | Notes                                                                                             |
 | ------------------------------- | ----------------- | --------------------- | ----------------- | ------------------------------------------------------------------------------------------------- |
 | apollo-server                   | 4315.97/s         | 27.88ms               | 180ms             |                                                                                                   |
+| apollo-server + graphql-jit     | 4618/s            | 25.83ms               | 239ms             |                                                                                                   |
 | express-graphql                 | 81/s              | 1059.14ms             | 7357ms            | Lots of JMeter thread crashes, consistently. Suspect too much buffering. Never exceeded 130 users |
 | fastify + apollo-server-fastify | 5619/s            | 21.66ms               | 140ms             |                                                                                                   |
-| fastify + fastify-gql           | 13,411/s          | 8.69ms               | 109ms             | `jit` option set to `1`                                                                           |
+| fastify + fastify-gql           | 13,411/s          | 8.69ms                | 109ms              | `jit` option set to `1`                                                                           |
 
 ## Thoughts
 
 - Good defaults matter
 - Should try adding [validation caching](https://github.com/graphql/express-graphql/issues/474) to `express-graphql` to speed it up
-- Should try `apollo-server` with [`graphql-jit`](https://www.npmjs.com/package/graphql-jit)
 
 ## Related
 
