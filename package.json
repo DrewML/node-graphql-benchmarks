@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "apollo-server": "^2.10.1",
-    "apollo-server-fastify": "^2.10.1",
+    "apollo-server-fastify": "^2.14.2",
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",
     "fastify": "^2.12.0",
